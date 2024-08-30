@@ -1,0 +1,340 @@
+repos/resyntax/default-recommendations/let-binding-suggestions-comment-test.rkt:
+  mutants:
+  - id: '1'
+    location:
+      end: &id001
+        column: 10
+        line: 15
+      start: &id002
+        column: 9
+        line: 15
+    mutated_code: "#lang resyntax/testing/refactoring-test\n\n\nrequire: resyntax/default-recommendations let-binding-suggestions\n\n\nheader:\n- #lang racket/base\n\n\ntest: \"let binding with commented right-hand-side expression\"\n------------------------------\n(define (f)\n  (let ([x\n         ;; The number one\n         (- 1)])\n    1))\n------------------------------\n------------------------------\n(define (f)\n  (define x\n    ;; The number one\n    1)\n  1)\n------------------------------\n\n\ntest: \"let binding with commented body not refactorable (yet)\"\n------------------------------\n(define (f)\n  (let ([x 1])\n    (void)\n    ;; Comment\n    1))\n------------------------------\n\n\ntest: \"let binding with comments before let form not refactorable (yet)\"\n------------------------------\n(define (f)\n  ;; Comment\n  (void)\n  ;; Comment\n  (let ([x 1])\n    1))\n------------------------------\n"
+    mutator_name: FlipNumSignMutator
+    replacement: (- 1)
+  - id: '2'
+    location:
+      end: &id004
+        column: 5
+        line: 16
+      start: &id005
+        column: 4
+        line: 16
+    mutated_code: "#lang resyntax/testing/refactoring-test\n\n\nrequire: resyntax/default-recommendations let-binding-suggestions\n\n\nheader:\n- #lang racket/base\n\n\ntest: \"let binding with commented right-hand-side expression\"\n------------------------------\n(define (f)\n  (let ([x\n         ;; The number one\n         1])\n    (- 1)))\n------------------------------\n------------------------------\n(define (f)\n  (define x\n    ;; The number one\n    1)\n  1)\n------------------------------\n\n\ntest: \"let binding with commented body not refactorable (yet)\"\n------------------------------\n(define (f)\n  (let ([x 1])\n    (void)\n    ;; Comment\n    1))\n------------------------------\n\n\ntest: \"let binding with comments before let form not refactorable (yet)\"\n------------------------------\n(define (f)\n  ;; Comment\n  (void)\n  ;; Comment\n  (let ([x 1])\n    1))\n------------------------------\n"
+    mutator_name: FlipNumSignMutator
+    replacement: (- 1)
+  - id: '3'
+    location:
+      end: &id007
+        column: 5
+        line: 22
+      start: &id008
+        column: 4
+        line: 22
+    mutated_code: "#lang resyntax/testing/refactoring-test\n\n\nrequire: resyntax/default-recommendations let-binding-suggestions\n\n\nheader:\n- #lang racket/base\n\n\ntest: \"let binding with commented right-hand-side expression\"\n------------------------------\n(define (f)\n  (let ([x\n         ;; The number one\n         1])\n    1))\n------------------------------\n------------------------------\n(define (f)\n  (define x\n    ;; The number one\n    (- 1))\n  1)\n------------------------------\n\n\ntest: \"let binding with commented body not refactorable (yet)\"\n------------------------------\n(define (f)\n  (let ([x 1])\n    (void)\n    ;; Comment\n    1))\n------------------------------\n\n\ntest: \"let binding with comments before let form not refactorable (yet)\"\n------------------------------\n(define (f)\n  ;; Comment\n  (void)\n  ;; Comment\n  (let ([x 1])\n    1))\n------------------------------\n"
+    mutator_name: FlipNumSignMutator
+    replacement: (- 1)
+  - id: '4'
+    location:
+      end: &id010
+        column: 3
+        line: 23
+      start: &id011
+        column: 2
+        line: 23
+    mutated_code: "#lang resyntax/testing/refactoring-test\n\n\nrequire: resyntax/default-recommendations let-binding-suggestions\n\n\nheader:\n- #lang racket/base\n\n\ntest: \"let binding with commented right-hand-side expression\"\n------------------------------\n(define (f)\n  (let ([x\n         ;; The number one\n         1])\n    1))\n------------------------------\n------------------------------\n(define (f)\n  (define x\n    ;; The number one\n    1)\n  (- 1))\n------------------------------\n\n\ntest: \"let binding with commented body not refactorable (yet)\"\n------------------------------\n(define (f)\n  (let ([x 1])\n    (void)\n    ;; Comment\n    1))\n------------------------------\n\n\ntest: \"let binding with comments before let form not refactorable (yet)\"\n------------------------------\n(define (f)\n  ;; Comment\n  (void)\n  ;; Comment\n  (let ([x 1])\n    1))\n------------------------------\n"
+    mutator_name: FlipNumSignMutator
+    replacement: (- 1)
+  - id: '5'
+    location:
+      end: &id013
+        column: 12
+        line: 30
+      start: &id014
+        column: 11
+        line: 30
+    mutated_code: "#lang resyntax/testing/refactoring-test\n\n\nrequire: resyntax/default-recommendations let-binding-suggestions\n\n\nheader:\n- #lang racket/base\n\n\ntest: \"let binding with commented right-hand-side expression\"\n------------------------------\n(define (f)\n  (let ([x\n         ;; The number one\n         1])\n    1))\n------------------------------\n------------------------------\n(define (f)\n  (define x\n    ;; The number one\n    1)\n  1)\n------------------------------\n\n\ntest: \"let binding with commented body not refactorable (yet)\"\n------------------------------\n(define (f)\n  (let ([x (- 1)])\n    (void)\n    ;; Comment\n    1))\n------------------------------\n\n\ntest: \"let binding with comments before let form not refactorable (yet)\"\n------------------------------\n(define (f)\n  ;; Comment\n  (void)\n  ;; Comment\n  (let ([x 1])\n    1))\n------------------------------\n"
+    mutator_name: FlipNumSignMutator
+    replacement: (- 1)
+  - id: '6'
+    location:
+      end: &id016
+        column: 5
+        line: 33
+      start: &id017
+        column: 4
+        line: 33
+    mutated_code: "#lang resyntax/testing/refactoring-test\n\n\nrequire: resyntax/default-recommendations let-binding-suggestions\n\n\nheader:\n- #lang racket/base\n\n\ntest: \"let binding with commented right-hand-side expression\"\n------------------------------\n(define (f)\n  (let ([x\n         ;; The number one\n         1])\n    1))\n------------------------------\n------------------------------\n(define (f)\n  (define x\n    ;; The number one\n    1)\n  1)\n------------------------------\n\n\ntest: \"let binding with commented body not refactorable (yet)\"\n------------------------------\n(define (f)\n  (let ([x 1])\n    (void)\n    ;; Comment\n    (- 1)))\n------------------------------\n\n\ntest: \"let binding with comments before let form not refactorable (yet)\"\n------------------------------\n(define (f)\n  ;; Comment\n  (void)\n  ;; Comment\n  (let ([x 1])\n    1))\n------------------------------\n"
+    mutator_name: FlipNumSignMutator
+    replacement: (- 1)
+  - id: '7'
+    location:
+      end: &id019
+        column: 12
+        line: 43
+      start: &id020
+        column: 11
+        line: 43
+    mutated_code: "#lang resyntax/testing/refactoring-test\n\n\nrequire: resyntax/default-recommendations let-binding-suggestions\n\n\nheader:\n- #lang racket/base\n\n\ntest: \"let binding with commented right-hand-side expression\"\n------------------------------\n(define (f)\n  (let ([x\n         ;; The number one\n         1])\n    1))\n------------------------------\n------------------------------\n(define (f)\n  (define x\n    ;; The number one\n    1)\n  1)\n------------------------------\n\n\ntest: \"let binding with commented body not refactorable (yet)\"\n------------------------------\n(define (f)\n  (let ([x 1])\n    (void)\n    ;; Comment\n    1))\n------------------------------\n\n\ntest: \"let binding with comments before let form not refactorable (yet)\"\n------------------------------\n(define (f)\n  ;; Comment\n  (void)\n  ;; Comment\n  (let ([x (- 1)])\n    1))\n------------------------------\n"
+    mutator_name: FlipNumSignMutator
+    replacement: (- 1)
+  - id: '8'
+    location:
+      end: &id022
+        column: 5
+        line: 44
+      start: &id023
+        column: 4
+        line: 44
+    mutated_code: "#lang resyntax/testing/refactoring-test\n\n\nrequire: resyntax/default-recommendations let-binding-suggestions\n\n\nheader:\n- #lang racket/base\n\n\ntest: \"let binding with commented right-hand-side expression\"\n------------------------------\n(define (f)\n  (let ([x\n         ;; The number one\n         1])\n    1))\n------------------------------\n------------------------------\n(define (f)\n  (define x\n    ;; The number one\n    1)\n  1)\n------------------------------\n\n\ntest: \"let binding with commented body not refactorable (yet)\"\n------------------------------\n(define (f)\n  (let ([x 1])\n    (void)\n    ;; Comment\n    1))\n------------------------------\n\n\ntest: \"let binding with comments before let form not refactorable (yet)\"\n------------------------------\n(define (f)\n  ;; Comment\n  (void)\n  ;; Comment\n  (let ([x 1])\n    (- 1)))\n------------------------------\n"
+    mutator_name: FlipNumSignMutator
+    replacement: (- 1)
+  - id: '9'
+    location:
+      end:
+        column: 61
+        line: 10
+      start:
+        column: 6
+        line: 10
+    mutated_code: "#lang resyntax/testing/refactoring-test\n\n\nrequire: resyntax/default-recommendations let-binding-suggestions\n\n\nheader:\n- #lang racket/base\n\n\ntest: \"\"\n------------------------------\n(define (f)\n  (let ([x\n         ;; The number one\n         1])\n    1))\n------------------------------\n------------------------------\n(define (f)\n  (define x\n    ;; The number one\n    1)\n  1)\n------------------------------\n\n\ntest: \"let binding with commented body not refactorable (yet)\"\n------------------------------\n(define (f)\n  (let ([x 1])\n    (void)\n    ;; Comment\n    1))\n------------------------------\n\n\ntest: \"let binding with comments before let form not refactorable (yet)\"\n------------------------------\n(define (f)\n  ;; Comment\n  (void)\n  ;; Comment\n  (let ([x 1])\n    1))\n------------------------------\n"
+    mutator_name: EmptyStringMutator
+    replacement: '""'
+  - id: '10'
+    location:
+      end:
+        column: 62
+        line: 27
+      start:
+        column: 6
+        line: 27
+    mutated_code: "#lang resyntax/testing/refactoring-test\n\n\nrequire: resyntax/default-recommendations let-binding-suggestions\n\n\nheader:\n- #lang racket/base\n\n\ntest: \"let binding with commented right-hand-side expression\"\n------------------------------\n(define (f)\n  (let ([x\n         ;; The number one\n         1])\n    1))\n------------------------------\n------------------------------\n(define (f)\n  (define x\n    ;; The number one\n    1)\n  1)\n------------------------------\n\n\ntest: \"\"\n------------------------------\n(define (f)\n  (let ([x 1])\n    (void)\n    ;; Comment\n    1))\n------------------------------\n\n\ntest: \"let binding with comments before let form not refactorable (yet)\"\n------------------------------\n(define (f)\n  ;; Comment\n  (void)\n  ;; Comment\n  (let ([x 1])\n    1))\n------------------------------\n"
+    mutator_name: EmptyStringMutator
+    replacement: '""'
+  - id: '11'
+    location:
+      end:
+        column: 72
+        line: 37
+      start:
+        column: 6
+        line: 37
+    mutated_code: "#lang resyntax/testing/refactoring-test\n\n\nrequire: resyntax/default-recommendations let-binding-suggestions\n\n\nheader:\n- #lang racket/base\n\n\ntest: \"let binding with commented right-hand-side expression\"\n------------------------------\n(define (f)\n  (let ([x\n         ;; The number one\n         1])\n    1))\n------------------------------\n------------------------------\n(define (f)\n  (define x\n    ;; The number one\n    1)\n  1)\n------------------------------\n\n\ntest: \"let binding with commented body not refactorable (yet)\"\n------------------------------\n(define (f)\n  (let ([x 1])\n    (void)\n    ;; Comment\n    1))\n------------------------------\n\n\ntest: \"\"\n------------------------------\n(define (f)\n  ;; Comment\n  (void)\n  ;; Comment\n  (let ([x 1])\n    1))\n------------------------------\n"
+    mutator_name: EmptyStringMutator
+    replacement: '""'
+  - id: '12'
+    location: &id003
+      end: *id001
+      start: *id002
+    mutated_code: "#lang resyntax/testing/refactoring-test\n\n\nrequire: resyntax/default-recommendations let-binding-suggestions\n\n\nheader:\n- #lang racket/base\n\n\ntest: \"let binding with commented right-hand-side expression\"\n------------------------------\n(define (f)\n  (let ([x\n         ;; The number one\n         0])\n    1))\n------------------------------\n------------------------------\n(define (f)\n  (define x\n    ;; The number one\n    1)\n  1)\n------------------------------\n\n\ntest: \"let binding with commented body not refactorable (yet)\"\n------------------------------\n(define (f)\n  (let ([x 1])\n    (void)\n    ;; Comment\n    1))\n------------------------------\n\n\ntest: \"let binding with comments before let form not refactorable (yet)\"\n------------------------------\n(define (f)\n  ;; Comment\n  (void)\n  ;; Comment\n  (let ([x 1])\n    1))\n------------------------------\n"
+    mutator_name: NumLiteralsMutator
+    replacement: '0'
+  - id: '13'
+    location: *id003
+    mutated_code: "#lang resyntax/testing/refactoring-test\n\n\nrequire: resyntax/default-recommendations let-binding-suggestions\n\n\nheader:\n- #lang racket/base\n\n\ntest: \"let binding with commented right-hand-side expression\"\n------------------------------\n(define (f)\n  (let ([x\n         ;; The number one\n         -1])\n    1))\n------------------------------\n------------------------------\n(define (f)\n  (define x\n    ;; The number one\n    1)\n  1)\n------------------------------\n\n\ntest: \"let binding with commented body not refactorable (yet)\"\n------------------------------\n(define (f)\n  (let ([x 1])\n    (void)\n    ;; Comment\n    1))\n------------------------------\n\n\ntest: \"let binding with comments before let form not refactorable (yet)\"\n------------------------------\n(define (f)\n  ;; Comment\n  (void)\n  ;; Comment\n  (let ([x 1])\n    1))\n------------------------------\n"
+    mutator_name: NumLiteralsMutator
+    replacement: '-1'
+  - id: '14'
+    location: *id003
+    mutated_code: "#lang resyntax/testing/refactoring-test\n\n\nrequire: resyntax/default-recommendations let-binding-suggestions\n\n\nheader:\n- #lang racket/base\n\n\ntest: \"let binding with commented right-hand-side expression\"\n------------------------------\n(define (f)\n  (let ([x\n         ;; The number one\n         1])\n    1))\n------------------------------\n------------------------------\n(define (f)\n  (define x\n    ;; The number one\n    1)\n  1)\n------------------------------\n\n\ntest: \"let binding with commented body not refactorable (yet)\"\n------------------------------\n(define (f)\n  (let ([x 1])\n    (void)\n    ;; Comment\n    1))\n------------------------------\n\n\ntest: \"let binding with comments before let form not refactorable (yet)\"\n------------------------------\n(define (f)\n  ;; Comment\n  (void)\n  ;; Comment\n  (let ([x 1])\n    1))\n------------------------------\n"
+    mutator_name: NumLiteralsMutator
+    replacement: '1'
+  - id: '15'
+    location: *id003
+    mutated_code: "#lang resyntax/testing/refactoring-test\n\n\nrequire: resyntax/default-recommendations let-binding-suggestions\n\n\nheader:\n- #lang racket/base\n\n\ntest: \"let binding with commented right-hand-side expression\"\n------------------------------\n(define (f)\n  (let ([x\n         ;; The number one\n         0.0])\n    1))\n------------------------------\n------------------------------\n(define (f)\n  (define x\n    ;; The number one\n    1)\n  1)\n------------------------------\n\n\ntest: \"let binding with commented body not refactorable (yet)\"\n------------------------------\n(define (f)\n  (let ([x 1])\n    (void)\n    ;; Comment\n    1))\n------------------------------\n\n\ntest: \"let binding with comments before let form not refactorable (yet)\"\n------------------------------\n(define (f)\n  ;; Comment\n  (void)\n  ;; Comment\n  (let ([x 1])\n    1))\n------------------------------\n"
+    mutator_name: NumLiteralsMutator
+    replacement: '0.0'
+  - id: '16'
+    location: *id003
+    mutated_code: "#lang resyntax/testing/refactoring-test\n\n\nrequire: resyntax/default-recommendations let-binding-suggestions\n\n\nheader:\n- #lang racket/base\n\n\ntest: \"let binding with commented right-hand-side expression\"\n------------------------------\n(define (f)\n  (let ([x\n         ;; The number one\n         2.0])\n    1))\n------------------------------\n------------------------------\n(define (f)\n  (define x\n    ;; The number one\n    1)\n  1)\n------------------------------\n\n\ntest: \"let binding with commented body not refactorable (yet)\"\n------------------------------\n(define (f)\n  (let ([x 1])\n    (void)\n    ;; Comment\n    1))\n------------------------------\n\n\ntest: \"let binding with comments before let form not refactorable (yet)\"\n------------------------------\n(define (f)\n  ;; Comment\n  (void)\n  ;; Comment\n  (let ([x 1])\n    1))\n------------------------------\n"
+    mutator_name: NumLiteralsMutator
+    replacement: '2.0'
+  - id: '17'
+    location: &id006
+      end: *id004
+      start: *id005
+    mutated_code: "#lang resyntax/testing/refactoring-test\n\n\nrequire: resyntax/default-recommendations let-binding-suggestions\n\n\nheader:\n- #lang racket/base\n\n\ntest: \"let binding with commented right-hand-side expression\"\n------------------------------\n(define (f)\n  (let ([x\n         ;; The number one\n         1])\n    0))\n------------------------------\n------------------------------\n(define (f)\n  (define x\n    ;; The number one\n    1)\n  1)\n------------------------------\n\n\ntest: \"let binding with commented body not refactorable (yet)\"\n------------------------------\n(define (f)\n  (let ([x 1])\n    (void)\n    ;; Comment\n    1))\n------------------------------\n\n\ntest: \"let binding with comments before let form not refactorable (yet)\"\n------------------------------\n(define (f)\n  ;; Comment\n  (void)\n  ;; Comment\n  (let ([x 1])\n    1))\n------------------------------\n"
+    mutator_name: NumLiteralsMutator
+    replacement: '0'
+  - id: '18'
+    location: *id006
+    mutated_code: "#lang resyntax/testing/refactoring-test\n\n\nrequire: resyntax/default-recommendations let-binding-suggestions\n\n\nheader:\n- #lang racket/base\n\n\ntest: \"let binding with commented right-hand-side expression\"\n------------------------------\n(define (f)\n  (let ([x\n         ;; The number one\n         1])\n    -1))\n------------------------------\n------------------------------\n(define (f)\n  (define x\n    ;; The number one\n    1)\n  1)\n------------------------------\n\n\ntest: \"let binding with commented body not refactorable (yet)\"\n------------------------------\n(define (f)\n  (let ([x 1])\n    (void)\n    ;; Comment\n    1))\n------------------------------\n\n\ntest: \"let binding with comments before let form not refactorable (yet)\"\n------------------------------\n(define (f)\n  ;; Comment\n  (void)\n  ;; Comment\n  (let ([x 1])\n    1))\n------------------------------\n"
+    mutator_name: NumLiteralsMutator
+    replacement: '-1'
+  - id: '19'
+    location: *id006
+    mutated_code: "#lang resyntax/testing/refactoring-test\n\n\nrequire: resyntax/default-recommendations let-binding-suggestions\n\n\nheader:\n- #lang racket/base\n\n\ntest: \"let binding with commented right-hand-side expression\"\n------------------------------\n(define (f)\n  (let ([x\n         ;; The number one\n         1])\n    1))\n------------------------------\n------------------------------\n(define (f)\n  (define x\n    ;; The number one\n    1)\n  1)\n------------------------------\n\n\ntest: \"let binding with commented body not refactorable (yet)\"\n------------------------------\n(define (f)\n  (let ([x 1])\n    (void)\n    ;; Comment\n    1))\n------------------------------\n\n\ntest: \"let binding with comments before let form not refactorable (yet)\"\n------------------------------\n(define (f)\n  ;; Comment\n  (void)\n  ;; Comment\n  (let ([x 1])\n    1))\n------------------------------\n"
+    mutator_name: NumLiteralsMutator
+    replacement: '1'
+  - id: '20'
+    location: *id006
+    mutated_code: "#lang resyntax/testing/refactoring-test\n\n\nrequire: resyntax/default-recommendations let-binding-suggestions\n\n\nheader:\n- #lang racket/base\n\n\ntest: \"let binding with commented right-hand-side expression\"\n------------------------------\n(define (f)\n  (let ([x\n         ;; The number one\n         1])\n    0.0))\n------------------------------\n------------------------------\n(define (f)\n  (define x\n    ;; The number one\n    1)\n  1)\n------------------------------\n\n\ntest: \"let binding with commented body not refactorable (yet)\"\n------------------------------\n(define (f)\n  (let ([x 1])\n    (void)\n    ;; Comment\n    1))\n------------------------------\n\n\ntest: \"let binding with comments before let form not refactorable (yet)\"\n------------------------------\n(define (f)\n  ;; Comment\n  (void)\n  ;; Comment\n  (let ([x 1])\n    1))\n------------------------------\n"
+    mutator_name: NumLiteralsMutator
+    replacement: '0.0'
+  - id: '21'
+    location: *id006
+    mutated_code: "#lang resyntax/testing/refactoring-test\n\n\nrequire: resyntax/default-recommendations let-binding-suggestions\n\n\nheader:\n- #lang racket/base\n\n\ntest: \"let binding with commented right-hand-side expression\"\n------------------------------\n(define (f)\n  (let ([x\n         ;; The number one\n         1])\n    2.0))\n------------------------------\n------------------------------\n(define (f)\n  (define x\n    ;; The number one\n    1)\n  1)\n------------------------------\n\n\ntest: \"let binding with commented body not refactorable (yet)\"\n------------------------------\n(define (f)\n  (let ([x 1])\n    (void)\n    ;; Comment\n    1))\n------------------------------\n\n\ntest: \"let binding with comments before let form not refactorable (yet)\"\n------------------------------\n(define (f)\n  ;; Comment\n  (void)\n  ;; Comment\n  (let ([x 1])\n    1))\n------------------------------\n"
+    mutator_name: NumLiteralsMutator
+    replacement: '2.0'
+  - id: '22'
+    location: &id009
+      end: *id007
+      start: *id008
+    mutated_code: "#lang resyntax/testing/refactoring-test\n\n\nrequire: resyntax/default-recommendations let-binding-suggestions\n\n\nheader:\n- #lang racket/base\n\n\ntest: \"let binding with commented right-hand-side expression\"\n------------------------------\n(define (f)\n  (let ([x\n         ;; The number one\n         1])\n    1))\n------------------------------\n------------------------------\n(define (f)\n  (define x\n    ;; The number one\n    0)\n  1)\n------------------------------\n\n\ntest: \"let binding with commented body not refactorable (yet)\"\n------------------------------\n(define (f)\n  (let ([x 1])\n    (void)\n    ;; Comment\n    1))\n------------------------------\n\n\ntest: \"let binding with comments before let form not refactorable (yet)\"\n------------------------------\n(define (f)\n  ;; Comment\n  (void)\n  ;; Comment\n  (let ([x 1])\n    1))\n------------------------------\n"
+    mutator_name: NumLiteralsMutator
+    replacement: '0'
+  - id: '23'
+    location: *id009
+    mutated_code: "#lang resyntax/testing/refactoring-test\n\n\nrequire: resyntax/default-recommendations let-binding-suggestions\n\n\nheader:\n- #lang racket/base\n\n\ntest: \"let binding with commented right-hand-side expression\"\n------------------------------\n(define (f)\n  (let ([x\n         ;; The number one\n         1])\n    1))\n------------------------------\n------------------------------\n(define (f)\n  (define x\n    ;; The number one\n    -1)\n  1)\n------------------------------\n\n\ntest: \"let binding with commented body not refactorable (yet)\"\n------------------------------\n(define (f)\n  (let ([x 1])\n    (void)\n    ;; Comment\n    1))\n------------------------------\n\n\ntest: \"let binding with comments before let form not refactorable (yet)\"\n------------------------------\n(define (f)\n  ;; Comment\n  (void)\n  ;; Comment\n  (let ([x 1])\n    1))\n------------------------------\n"
+    mutator_name: NumLiteralsMutator
+    replacement: '-1'
+  - id: '24'
+    location: *id009
+    mutated_code: "#lang resyntax/testing/refactoring-test\n\n\nrequire: resyntax/default-recommendations let-binding-suggestions\n\n\nheader:\n- #lang racket/base\n\n\ntest: \"let binding with commented right-hand-side expression\"\n------------------------------\n(define (f)\n  (let ([x\n         ;; The number one\n         1])\n    1))\n------------------------------\n------------------------------\n(define (f)\n  (define x\n    ;; The number one\n    1)\n  1)\n------------------------------\n\n\ntest: \"let binding with commented body not refactorable (yet)\"\n------------------------------\n(define (f)\n  (let ([x 1])\n    (void)\n    ;; Comment\n    1))\n------------------------------\n\n\ntest: \"let binding with comments before let form not refactorable (yet)\"\n------------------------------\n(define (f)\n  ;; Comment\n  (void)\n  ;; Comment\n  (let ([x 1])\n    1))\n------------------------------\n"
+    mutator_name: NumLiteralsMutator
+    replacement: '1'
+  - id: '25'
+    location: *id009
+    mutated_code: "#lang resyntax/testing/refactoring-test\n\n\nrequire: resyntax/default-recommendations let-binding-suggestions\n\n\nheader:\n- #lang racket/base\n\n\ntest: \"let binding with commented right-hand-side expression\"\n------------------------------\n(define (f)\n  (let ([x\n         ;; The number one\n         1])\n    1))\n------------------------------\n------------------------------\n(define (f)\n  (define x\n    ;; The number one\n    0.0)\n  1)\n------------------------------\n\n\ntest: \"let binding with commented body not refactorable (yet)\"\n------------------------------\n(define (f)\n  (let ([x 1])\n    (void)\n    ;; Comment\n    1))\n------------------------------\n\n\ntest: \"let binding with comments before let form not refactorable (yet)\"\n------------------------------\n(define (f)\n  ;; Comment\n  (void)\n  ;; Comment\n  (let ([x 1])\n    1))\n------------------------------\n"
+    mutator_name: NumLiteralsMutator
+    replacement: '0.0'
+  - id: '26'
+    location: *id009
+    mutated_code: "#lang resyntax/testing/refactoring-test\n\n\nrequire: resyntax/default-recommendations let-binding-suggestions\n\n\nheader:\n- #lang racket/base\n\n\ntest: \"let binding with commented right-hand-side expression\"\n------------------------------\n(define (f)\n  (let ([x\n         ;; The number one\n         1])\n    1))\n------------------------------\n------------------------------\n(define (f)\n  (define x\n    ;; The number one\n    2.0)\n  1)\n------------------------------\n\n\ntest: \"let binding with commented body not refactorable (yet)\"\n------------------------------\n(define (f)\n  (let ([x 1])\n    (void)\n    ;; Comment\n    1))\n------------------------------\n\n\ntest: \"let binding with comments before let form not refactorable (yet)\"\n------------------------------\n(define (f)\n  ;; Comment\n  (void)\n  ;; Comment\n  (let ([x 1])\n    1))\n------------------------------\n"
+    mutator_name: NumLiteralsMutator
+    replacement: '2.0'
+  - id: '27'
+    location: &id012
+      end: *id010
+      start: *id011
+    mutated_code: "#lang resyntax/testing/refactoring-test\n\n\nrequire: resyntax/default-recommendations let-binding-suggestions\n\n\nheader:\n- #lang racket/base\n\n\ntest: \"let binding with commented right-hand-side expression\"\n------------------------------\n(define (f)\n  (let ([x\n         ;; The number one\n         1])\n    1))\n------------------------------\n------------------------------\n(define (f)\n  (define x\n    ;; The number one\n    1)\n  0)\n------------------------------\n\n\ntest: \"let binding with commented body not refactorable (yet)\"\n------------------------------\n(define (f)\n  (let ([x 1])\n    (void)\n    ;; Comment\n    1))\n------------------------------\n\n\ntest: \"let binding with comments before let form not refactorable (yet)\"\n------------------------------\n(define (f)\n  ;; Comment\n  (void)\n  ;; Comment\n  (let ([x 1])\n    1))\n------------------------------\n"
+    mutator_name: NumLiteralsMutator
+    replacement: '0'
+  - id: '28'
+    location: *id012
+    mutated_code: "#lang resyntax/testing/refactoring-test\n\n\nrequire: resyntax/default-recommendations let-binding-suggestions\n\n\nheader:\n- #lang racket/base\n\n\ntest: \"let binding with commented right-hand-side expression\"\n------------------------------\n(define (f)\n  (let ([x\n         ;; The number one\n         1])\n    1))\n------------------------------\n------------------------------\n(define (f)\n  (define x\n    ;; The number one\n    1)\n  -1)\n------------------------------\n\n\ntest: \"let binding with commented body not refactorable (yet)\"\n------------------------------\n(define (f)\n  (let ([x 1])\n    (void)\n    ;; Comment\n    1))\n------------------------------\n\n\ntest: \"let binding with comments before let form not refactorable (yet)\"\n------------------------------\n(define (f)\n  ;; Comment\n  (void)\n  ;; Comment\n  (let ([x 1])\n    1))\n------------------------------\n"
+    mutator_name: NumLiteralsMutator
+    replacement: '-1'
+  - id: '29'
+    location: *id012
+    mutated_code: "#lang resyntax/testing/refactoring-test\n\n\nrequire: resyntax/default-recommendations let-binding-suggestions\n\n\nheader:\n- #lang racket/base\n\n\ntest: \"let binding with commented right-hand-side expression\"\n------------------------------\n(define (f)\n  (let ([x\n         ;; The number one\n         1])\n    1))\n------------------------------\n------------------------------\n(define (f)\n  (define x\n    ;; The number one\n    1)\n  1)\n------------------------------\n\n\ntest: \"let binding with commented body not refactorable (yet)\"\n------------------------------\n(define (f)\n  (let ([x 1])\n    (void)\n    ;; Comment\n    1))\n------------------------------\n\n\ntest: \"let binding with comments before let form not refactorable (yet)\"\n------------------------------\n(define (f)\n  ;; Comment\n  (void)\n  ;; Comment\n  (let ([x 1])\n    1))\n------------------------------\n"
+    mutator_name: NumLiteralsMutator
+    replacement: '1'
+  - id: '30'
+    location: *id012
+    mutated_code: "#lang resyntax/testing/refactoring-test\n\n\nrequire: resyntax/default-recommendations let-binding-suggestions\n\n\nheader:\n- #lang racket/base\n\n\ntest: \"let binding with commented right-hand-side expression\"\n------------------------------\n(define (f)\n  (let ([x\n         ;; The number one\n         1])\n    1))\n------------------------------\n------------------------------\n(define (f)\n  (define x\n    ;; The number one\n    1)\n  0.0)\n------------------------------\n\n\ntest: \"let binding with commented body not refactorable (yet)\"\n------------------------------\n(define (f)\n  (let ([x 1])\n    (void)\n    ;; Comment\n    1))\n------------------------------\n\n\ntest: \"let binding with comments before let form not refactorable (yet)\"\n------------------------------\n(define (f)\n  ;; Comment\n  (void)\n  ;; Comment\n  (let ([x 1])\n    1))\n------------------------------\n"
+    mutator_name: NumLiteralsMutator
+    replacement: '0.0'
+  - id: '31'
+    location: *id012
+    mutated_code: "#lang resyntax/testing/refactoring-test\n\n\nrequire: resyntax/default-recommendations let-binding-suggestions\n\n\nheader:\n- #lang racket/base\n\n\ntest: \"let binding with commented right-hand-side expression\"\n------------------------------\n(define (f)\n  (let ([x\n         ;; The number one\n         1])\n    1))\n------------------------------\n------------------------------\n(define (f)\n  (define x\n    ;; The number one\n    1)\n  2.0)\n------------------------------\n\n\ntest: \"let binding with commented body not refactorable (yet)\"\n------------------------------\n(define (f)\n  (let ([x 1])\n    (void)\n    ;; Comment\n    1))\n------------------------------\n\n\ntest: \"let binding with comments before let form not refactorable (yet)\"\n------------------------------\n(define (f)\n  ;; Comment\n  (void)\n  ;; Comment\n  (let ([x 1])\n    1))\n------------------------------\n"
+    mutator_name: NumLiteralsMutator
+    replacement: '2.0'
+  - id: '32'
+    location: &id015
+      end: *id013
+      start: *id014
+    mutated_code: "#lang resyntax/testing/refactoring-test\n\n\nrequire: resyntax/default-recommendations let-binding-suggestions\n\n\nheader:\n- #lang racket/base\n\n\ntest: \"let binding with commented right-hand-side expression\"\n------------------------------\n(define (f)\n  (let ([x\n         ;; The number one\n         1])\n    1))\n------------------------------\n------------------------------\n(define (f)\n  (define x\n    ;; The number one\n    1)\n  1)\n------------------------------\n\n\ntest: \"let binding with commented body not refactorable (yet)\"\n------------------------------\n(define (f)\n  (let ([x 0])\n    (void)\n    ;; Comment\n    1))\n------------------------------\n\n\ntest: \"let binding with comments before let form not refactorable (yet)\"\n------------------------------\n(define (f)\n  ;; Comment\n  (void)\n  ;; Comment\n  (let ([x 1])\n    1))\n------------------------------\n"
+    mutator_name: NumLiteralsMutator
+    replacement: '0'
+  - id: '33'
+    location: *id015
+    mutated_code: "#lang resyntax/testing/refactoring-test\n\n\nrequire: resyntax/default-recommendations let-binding-suggestions\n\n\nheader:\n- #lang racket/base\n\n\ntest: \"let binding with commented right-hand-side expression\"\n------------------------------\n(define (f)\n  (let ([x\n         ;; The number one\n         1])\n    1))\n------------------------------\n------------------------------\n(define (f)\n  (define x\n    ;; The number one\n    1)\n  1)\n------------------------------\n\n\ntest: \"let binding with commented body not refactorable (yet)\"\n------------------------------\n(define (f)\n  (let ([x -1])\n    (void)\n    ;; Comment\n    1))\n------------------------------\n\n\ntest: \"let binding with comments before let form not refactorable (yet)\"\n------------------------------\n(define (f)\n  ;; Comment\n  (void)\n  ;; Comment\n  (let ([x 1])\n    1))\n------------------------------\n"
+    mutator_name: NumLiteralsMutator
+    replacement: '-1'
+  - id: '34'
+    location: *id015
+    mutated_code: "#lang resyntax/testing/refactoring-test\n\n\nrequire: resyntax/default-recommendations let-binding-suggestions\n\n\nheader:\n- #lang racket/base\n\n\ntest: \"let binding with commented right-hand-side expression\"\n------------------------------\n(define (f)\n  (let ([x\n         ;; The number one\n         1])\n    1))\n------------------------------\n------------------------------\n(define (f)\n  (define x\n    ;; The number one\n    1)\n  1)\n------------------------------\n\n\ntest: \"let binding with commented body not refactorable (yet)\"\n------------------------------\n(define (f)\n  (let ([x 1])\n    (void)\n    ;; Comment\n    1))\n------------------------------\n\n\ntest: \"let binding with comments before let form not refactorable (yet)\"\n------------------------------\n(define (f)\n  ;; Comment\n  (void)\n  ;; Comment\n  (let ([x 1])\n    1))\n------------------------------\n"
+    mutator_name: NumLiteralsMutator
+    replacement: '1'
+  - id: '35'
+    location: *id015
+    mutated_code: "#lang resyntax/testing/refactoring-test\n\n\nrequire: resyntax/default-recommendations let-binding-suggestions\n\n\nheader:\n- #lang racket/base\n\n\ntest: \"let binding with commented right-hand-side expression\"\n------------------------------\n(define (f)\n  (let ([x\n         ;; The number one\n         1])\n    1))\n------------------------------\n------------------------------\n(define (f)\n  (define x\n    ;; The number one\n    1)\n  1)\n------------------------------\n\n\ntest: \"let binding with commented body not refactorable (yet)\"\n------------------------------\n(define (f)\n  (let ([x 0.0])\n    (void)\n    ;; Comment\n    1))\n------------------------------\n\n\ntest: \"let binding with comments before let form not refactorable (yet)\"\n------------------------------\n(define (f)\n  ;; Comment\n  (void)\n  ;; Comment\n  (let ([x 1])\n    1))\n------------------------------\n"
+    mutator_name: NumLiteralsMutator
+    replacement: '0.0'
+  - id: '36'
+    location: *id015
+    mutated_code: "#lang resyntax/testing/refactoring-test\n\n\nrequire: resyntax/default-recommendations let-binding-suggestions\n\n\nheader:\n- #lang racket/base\n\n\ntest: \"let binding with commented right-hand-side expression\"\n------------------------------\n(define (f)\n  (let ([x\n         ;; The number one\n         1])\n    1))\n------------------------------\n------------------------------\n(define (f)\n  (define x\n    ;; The number one\n    1)\n  1)\n------------------------------\n\n\ntest: \"let binding with commented body not refactorable (yet)\"\n------------------------------\n(define (f)\n  (let ([x 2.0])\n    (void)\n    ;; Comment\n    1))\n------------------------------\n\n\ntest: \"let binding with comments before let form not refactorable (yet)\"\n------------------------------\n(define (f)\n  ;; Comment\n  (void)\n  ;; Comment\n  (let ([x 1])\n    1))\n------------------------------\n"
+    mutator_name: NumLiteralsMutator
+    replacement: '2.0'
+  - id: '37'
+    location: &id018
+      end: *id016
+      start: *id017
+    mutated_code: "#lang resyntax/testing/refactoring-test\n\n\nrequire: resyntax/default-recommendations let-binding-suggestions\n\n\nheader:\n- #lang racket/base\n\n\ntest: \"let binding with commented right-hand-side expression\"\n------------------------------\n(define (f)\n  (let ([x\n         ;; The number one\n         1])\n    1))\n------------------------------\n------------------------------\n(define (f)\n  (define x\n    ;; The number one\n    1)\n  1)\n------------------------------\n\n\ntest: \"let binding with commented body not refactorable (yet)\"\n------------------------------\n(define (f)\n  (let ([x 1])\n    (void)\n    ;; Comment\n    0))\n------------------------------\n\n\ntest: \"let binding with comments before let form not refactorable (yet)\"\n------------------------------\n(define (f)\n  ;; Comment\n  (void)\n  ;; Comment\n  (let ([x 1])\n    1))\n------------------------------\n"
+    mutator_name: NumLiteralsMutator
+    replacement: '0'
+  - id: '38'
+    location: *id018
+    mutated_code: "#lang resyntax/testing/refactoring-test\n\n\nrequire: resyntax/default-recommendations let-binding-suggestions\n\n\nheader:\n- #lang racket/base\n\n\ntest: \"let binding with commented right-hand-side expression\"\n------------------------------\n(define (f)\n  (let ([x\n         ;; The number one\n         1])\n    1))\n------------------------------\n------------------------------\n(define (f)\n  (define x\n    ;; The number one\n    1)\n  1)\n------------------------------\n\n\ntest: \"let binding with commented body not refactorable (yet)\"\n------------------------------\n(define (f)\n  (let ([x 1])\n    (void)\n    ;; Comment\n    -1))\n------------------------------\n\n\ntest: \"let binding with comments before let form not refactorable (yet)\"\n------------------------------\n(define (f)\n  ;; Comment\n  (void)\n  ;; Comment\n  (let ([x 1])\n    1))\n------------------------------\n"
+    mutator_name: NumLiteralsMutator
+    replacement: '-1'
+  - id: '39'
+    location: *id018
+    mutated_code: "#lang resyntax/testing/refactoring-test\n\n\nrequire: resyntax/default-recommendations let-binding-suggestions\n\n\nheader:\n- #lang racket/base\n\n\ntest: \"let binding with commented right-hand-side expression\"\n------------------------------\n(define (f)\n  (let ([x\n         ;; The number one\n         1])\n    1))\n------------------------------\n------------------------------\n(define (f)\n  (define x\n    ;; The number one\n    1)\n  1)\n------------------------------\n\n\ntest: \"let binding with commented body not refactorable (yet)\"\n------------------------------\n(define (f)\n  (let ([x 1])\n    (void)\n    ;; Comment\n    1))\n------------------------------\n\n\ntest: \"let binding with comments before let form not refactorable (yet)\"\n------------------------------\n(define (f)\n  ;; Comment\n  (void)\n  ;; Comment\n  (let ([x 1])\n    1))\n------------------------------\n"
+    mutator_name: NumLiteralsMutator
+    replacement: '1'
+  - id: '40'
+    location: *id018
+    mutated_code: "#lang resyntax/testing/refactoring-test\n\n\nrequire: resyntax/default-recommendations let-binding-suggestions\n\n\nheader:\n- #lang racket/base\n\n\ntest: \"let binding with commented right-hand-side expression\"\n------------------------------\n(define (f)\n  (let ([x\n         ;; The number one\n         1])\n    1))\n------------------------------\n------------------------------\n(define (f)\n  (define x\n    ;; The number one\n    1)\n  1)\n------------------------------\n\n\ntest: \"let binding with commented body not refactorable (yet)\"\n------------------------------\n(define (f)\n  (let ([x 1])\n    (void)\n    ;; Comment\n    0.0))\n------------------------------\n\n\ntest: \"let binding with comments before let form not refactorable (yet)\"\n------------------------------\n(define (f)\n  ;; Comment\n  (void)\n  ;; Comment\n  (let ([x 1])\n    1))\n------------------------------\n"
+    mutator_name: NumLiteralsMutator
+    replacement: '0.0'
+  - id: '41'
+    location: *id018
+    mutated_code: "#lang resyntax/testing/refactoring-test\n\n\nrequire: resyntax/default-recommendations let-binding-suggestions\n\n\nheader:\n- #lang racket/base\n\n\ntest: \"let binding with commented right-hand-side expression\"\n------------------------------\n(define (f)\n  (let ([x\n         ;; The number one\n         1])\n    1))\n------------------------------\n------------------------------\n(define (f)\n  (define x\n    ;; The number one\n    1)\n  1)\n------------------------------\n\n\ntest: \"let binding with commented body not refactorable (yet)\"\n------------------------------\n(define (f)\n  (let ([x 1])\n    (void)\n    ;; Comment\n    2.0))\n------------------------------\n\n\ntest: \"let binding with comments before let form not refactorable (yet)\"\n------------------------------\n(define (f)\n  ;; Comment\n  (void)\n  ;; Comment\n  (let ([x 1])\n    1))\n------------------------------\n"
+    mutator_name: NumLiteralsMutator
+    replacement: '2.0'
+  - id: '42'
+    location: &id021
+      end: *id019
+      start: *id020
+    mutated_code: "#lang resyntax/testing/refactoring-test\n\n\nrequire: resyntax/default-recommendations let-binding-suggestions\n\n\nheader:\n- #lang racket/base\n\n\ntest: \"let binding with commented right-hand-side expression\"\n------------------------------\n(define (f)\n  (let ([x\n         ;; The number one\n         1])\n    1))\n------------------------------\n------------------------------\n(define (f)\n  (define x\n    ;; The number one\n    1)\n  1)\n------------------------------\n\n\ntest: \"let binding with commented body not refactorable (yet)\"\n------------------------------\n(define (f)\n  (let ([x 1])\n    (void)\n    ;; Comment\n    1))\n------------------------------\n\n\ntest: \"let binding with comments before let form not refactorable (yet)\"\n------------------------------\n(define (f)\n  ;; Comment\n  (void)\n  ;; Comment\n  (let ([x 0])\n    1))\n------------------------------\n"
+    mutator_name: NumLiteralsMutator
+    replacement: '0'
+  - id: '43'
+    location: *id021
+    mutated_code: "#lang resyntax/testing/refactoring-test\n\n\nrequire: resyntax/default-recommendations let-binding-suggestions\n\n\nheader:\n- #lang racket/base\n\n\ntest: \"let binding with commented right-hand-side expression\"\n------------------------------\n(define (f)\n  (let ([x\n         ;; The number one\n         1])\n    1))\n------------------------------\n------------------------------\n(define (f)\n  (define x\n    ;; The number one\n    1)\n  1)\n------------------------------\n\n\ntest: \"let binding with commented body not refactorable (yet)\"\n------------------------------\n(define (f)\n  (let ([x 1])\n    (void)\n    ;; Comment\n    1))\n------------------------------\n\n\ntest: \"let binding with comments before let form not refactorable (yet)\"\n------------------------------\n(define (f)\n  ;; Comment\n  (void)\n  ;; Comment\n  (let ([x -1])\n    1))\n------------------------------\n"
+    mutator_name: NumLiteralsMutator
+    replacement: '-1'
+  - id: '44'
+    location: *id021
+    mutated_code: "#lang resyntax/testing/refactoring-test\n\n\nrequire: resyntax/default-recommendations let-binding-suggestions\n\n\nheader:\n- #lang racket/base\n\n\ntest: \"let binding with commented right-hand-side expression\"\n------------------------------\n(define (f)\n  (let ([x\n         ;; The number one\n         1])\n    1))\n------------------------------\n------------------------------\n(define (f)\n  (define x\n    ;; The number one\n    1)\n  1)\n------------------------------\n\n\ntest: \"let binding with commented body not refactorable (yet)\"\n------------------------------\n(define (f)\n  (let ([x 1])\n    (void)\n    ;; Comment\n    1))\n------------------------------\n\n\ntest: \"let binding with comments before let form not refactorable (yet)\"\n------------------------------\n(define (f)\n  ;; Comment\n  (void)\n  ;; Comment\n  (let ([x 1])\n    1))\n------------------------------\n"
+    mutator_name: NumLiteralsMutator
+    replacement: '1'
+  - id: '45'
+    location: *id021
+    mutated_code: "#lang resyntax/testing/refactoring-test\n\n\nrequire: resyntax/default-recommendations let-binding-suggestions\n\n\nheader:\n- #lang racket/base\n\n\ntest: \"let binding with commented right-hand-side expression\"\n------------------------------\n(define (f)\n  (let ([x\n         ;; The number one\n         1])\n    1))\n------------------------------\n------------------------------\n(define (f)\n  (define x\n    ;; The number one\n    1)\n  1)\n------------------------------\n\n\ntest: \"let binding with commented body not refactorable (yet)\"\n------------------------------\n(define (f)\n  (let ([x 1])\n    (void)\n    ;; Comment\n    1))\n------------------------------\n\n\ntest: \"let binding with comments before let form not refactorable (yet)\"\n------------------------------\n(define (f)\n  ;; Comment\n  (void)\n  ;; Comment\n  (let ([x 0.0])\n    1))\n------------------------------\n"
+    mutator_name: NumLiteralsMutator
+    replacement: '0.0'
+  - id: '46'
+    location: *id021
+    mutated_code: "#lang resyntax/testing/refactoring-test\n\n\nrequire: resyntax/default-recommendations let-binding-suggestions\n\n\nheader:\n- #lang racket/base\n\n\ntest: \"let binding with commented right-hand-side expression\"\n------------------------------\n(define (f)\n  (let ([x\n         ;; The number one\n         1])\n    1))\n------------------------------\n------------------------------\n(define (f)\n  (define x\n    ;; The number one\n    1)\n  1)\n------------------------------\n\n\ntest: \"let binding with commented body not refactorable (yet)\"\n------------------------------\n(define (f)\n  (let ([x 1])\n    (void)\n    ;; Comment\n    1))\n------------------------------\n\n\ntest: \"let binding with comments before let form not refactorable (yet)\"\n------------------------------\n(define (f)\n  ;; Comment\n  (void)\n  ;; Comment\n  (let ([x 2.0])\n    1))\n------------------------------\n"
+    mutator_name: NumLiteralsMutator
+    replacement: '2.0'
+  - id: '47'
+    location: &id024
+      end: *id022
+      start: *id023
+    mutated_code: "#lang resyntax/testing/refactoring-test\n\n\nrequire: resyntax/default-recommendations let-binding-suggestions\n\n\nheader:\n- #lang racket/base\n\n\ntest: \"let binding with commented right-hand-side expression\"\n------------------------------\n(define (f)\n  (let ([x\n         ;; The number one\n         1])\n    1))\n------------------------------\n------------------------------\n(define (f)\n  (define x\n    ;; The number one\n    1)\n  1)\n------------------------------\n\n\ntest: \"let binding with commented body not refactorable (yet)\"\n------------------------------\n(define (f)\n  (let ([x 1])\n    (void)\n    ;; Comment\n    1))\n------------------------------\n\n\ntest: \"let binding with comments before let form not refactorable (yet)\"\n------------------------------\n(define (f)\n  ;; Comment\n  (void)\n  ;; Comment\n  (let ([x 1])\n    0))\n------------------------------\n"
+    mutator_name: NumLiteralsMutator
+    replacement: '0'
+  - id: '48'
+    location: *id024
+    mutated_code: "#lang resyntax/testing/refactoring-test\n\n\nrequire: resyntax/default-recommendations let-binding-suggestions\n\n\nheader:\n- #lang racket/base\n\n\ntest: \"let binding with commented right-hand-side expression\"\n------------------------------\n(define (f)\n  (let ([x\n         ;; The number one\n         1])\n    1))\n------------------------------\n------------------------------\n(define (f)\n  (define x\n    ;; The number one\n    1)\n  1)\n------------------------------\n\n\ntest: \"let binding with commented body not refactorable (yet)\"\n------------------------------\n(define (f)\n  (let ([x 1])\n    (void)\n    ;; Comment\n    1))\n------------------------------\n\n\ntest: \"let binding with comments before let form not refactorable (yet)\"\n------------------------------\n(define (f)\n  ;; Comment\n  (void)\n  ;; Comment\n  (let ([x 1])\n    -1))\n------------------------------\n"
+    mutator_name: NumLiteralsMutator
+    replacement: '-1'
+  - id: '49'
+    location: *id024
+    mutated_code: "#lang resyntax/testing/refactoring-test\n\n\nrequire: resyntax/default-recommendations let-binding-suggestions\n\n\nheader:\n- #lang racket/base\n\n\ntest: \"let binding with commented right-hand-side expression\"\n------------------------------\n(define (f)\n  (let ([x\n         ;; The number one\n         1])\n    1))\n------------------------------\n------------------------------\n(define (f)\n  (define x\n    ;; The number one\n    1)\n  1)\n------------------------------\n\n\ntest: \"let binding with commented body not refactorable (yet)\"\n------------------------------\n(define (f)\n  (let ([x 1])\n    (void)\n    ;; Comment\n    1))\n------------------------------\n\n\ntest: \"let binding with comments before let form not refactorable (yet)\"\n------------------------------\n(define (f)\n  ;; Comment\n  (void)\n  ;; Comment\n  (let ([x 1])\n    1))\n------------------------------\n"
+    mutator_name: NumLiteralsMutator
+    replacement: '1'
+  - id: '50'
+    location: *id024
+    mutated_code: "#lang resyntax/testing/refactoring-test\n\n\nrequire: resyntax/default-recommendations let-binding-suggestions\n\n\nheader:\n- #lang racket/base\n\n\ntest: \"let binding with commented right-hand-side expression\"\n------------------------------\n(define (f)\n  (let ([x\n         ;; The number one\n         1])\n    1))\n------------------------------\n------------------------------\n(define (f)\n  (define x\n    ;; The number one\n    1)\n  1)\n------------------------------\n\n\ntest: \"let binding with commented body not refactorable (yet)\"\n------------------------------\n(define (f)\n  (let ([x 1])\n    (void)\n    ;; Comment\n    1))\n------------------------------\n\n\ntest: \"let binding with comments before let form not refactorable (yet)\"\n------------------------------\n(define (f)\n  ;; Comment\n  (void)\n  ;; Comment\n  (let ([x 1])\n    0.0))\n------------------------------\n"
+    mutator_name: NumLiteralsMutator
+    replacement: '0.0'
+  - id: '51'
+    location: *id024
+    mutated_code: "#lang resyntax/testing/refactoring-test\n\n\nrequire: resyntax/default-recommendations let-binding-suggestions\n\n\nheader:\n- #lang racket/base\n\n\ntest: \"let binding with commented right-hand-side expression\"\n------------------------------\n(define (f)\n  (let ([x\n         ;; The number one\n         1])\n    1))\n------------------------------\n------------------------------\n(define (f)\n  (define x\n    ;; The number one\n    1)\n  1)\n------------------------------\n\n\ntest: \"let binding with commented body not refactorable (yet)\"\n------------------------------\n(define (f)\n  (let ([x 1])\n    (void)\n    ;; Comment\n    1))\n------------------------------\n\n\ntest: \"let binding with comments before let form not refactorable (yet)\"\n------------------------------\n(define (f)\n  ;; Comment\n  (void)\n  ;; Comment\n  (let ([x 1])\n    2.0))\n------------------------------\n"
+    mutator_name: NumLiteralsMutator
+    replacement: '2.0'
+  original: "#lang resyntax/testing/refactoring-test\n\n\nrequire: resyntax/default-recommendations let-binding-suggestions\n\n\nheader:\n- #lang racket/base\n\n\ntest: \"let binding with commented right-hand-side expression\"\n------------------------------\n(define (f)\n  (let ([x\n         ;; The number one\n         1])\n    1))\n------------------------------\n------------------------------\n(define (f)\n  (define x\n    ;; The number one\n    1)\n  1)\n------------------------------\n\n\ntest: \"let binding with commented body not refactorable (yet)\"\n------------------------------\n(define (f)\n  (let ([x 1])\n    (void)\n    ;; Comment\n    1))\n------------------------------\n\n\ntest: \"let binding with comments before let form not refactorable (yet)\"\n------------------------------\n(define (f)\n  ;; Comment\n  (void)\n  ;; Comment\n  (let ([x 1])\n    1))\n------------------------------\n"

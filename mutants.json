@@ -1,0 +1,883 @@
+{
+  "schemaVersion": "1",
+  "thresholds": {
+    "high": 100,
+    "low": 100
+  },
+  "projectRoot": "/Users/charlieray/Desktop/Research/WildProj",
+  "files": {
+    "repos/resyntax/default-recommendations/let-binding-suggestions-comment-test.rkt": {
+      "language": "racket",
+      "source": "#lang resyntax/testing/refactoring-test\n\n\nrequire: resyntax/default-recommendations let-binding-suggestions\n\n\nheader:\n- #lang racket/base\n\n\ntest: \"let binding with commented right-hand-side expression\"\n------------------------------\n(define (f)\n  (let ([x\n         ;; The number one\n         1])\n    1))\n------------------------------\n------------------------------\n(define (f)\n  (define x\n    ;; The number one\n    1)\n  1)\n------------------------------\n\n\ntest: \"let binding with commented body not refactorable (yet)\"\n------------------------------\n(define (f)\n  (let ([x 1])\n    (void)\n    ;; Comment\n    1))\n------------------------------\n\n\ntest: \"let binding with comments before let form not refactorable (yet)\"\n------------------------------\n(define (f)\n  ;; Comment\n  (void)\n  ;; Comment\n  (let ([x 1])\n    1))\n------------------------------\n",
+      "mutants": [
+        {
+          "id": "1",
+          "location": {
+            "start": {
+              "column": 10,
+              "line": 16
+            },
+            "end": {
+              "column": 11,
+              "line": 16
+            }
+          },
+          "mutatorName": "FlipNumSignMutator",
+          "replacement": "(- 1)",
+          "status": "Timeout",
+          "killedBy": []
+        },
+        {
+          "id": "2",
+          "location": {
+            "start": {
+              "column": 5,
+              "line": 17
+            },
+            "end": {
+              "column": 6,
+              "line": 17
+            }
+          },
+          "mutatorName": "FlipNumSignMutator",
+          "replacement": "(- 1)",
+          "status": "Timeout",
+          "killedBy": []
+        },
+        {
+          "id": "3",
+          "location": {
+            "start": {
+              "column": 5,
+              "line": 23
+            },
+            "end": {
+              "column": 6,
+              "line": 23
+            }
+          },
+          "mutatorName": "FlipNumSignMutator",
+          "replacement": "(- 1)",
+          "status": "Timeout",
+          "killedBy": []
+        },
+        {
+          "id": "4",
+          "location": {
+            "start": {
+              "column": 3,
+              "line": 24
+            },
+            "end": {
+              "column": 4,
+              "line": 24
+            }
+          },
+          "mutatorName": "FlipNumSignMutator",
+          "replacement": "(- 1)",
+          "status": "Timeout",
+          "killedBy": []
+        },
+        {
+          "id": "5",
+          "location": {
+            "start": {
+              "column": 12,
+              "line": 31
+            },
+            "end": {
+              "column": 13,
+              "line": 31
+            }
+          },
+          "mutatorName": "FlipNumSignMutator",
+          "replacement": "(- 1)",
+          "status": "Timeout",
+          "killedBy": []
+        },
+        {
+          "id": "6",
+          "location": {
+            "start": {
+              "column": 5,
+              "line": 34
+            },
+            "end": {
+              "column": 6,
+              "line": 34
+            }
+          },
+          "mutatorName": "FlipNumSignMutator",
+          "replacement": "(- 1)",
+          "status": "Timeout",
+          "killedBy": []
+        },
+        {
+          "id": "7",
+          "location": {
+            "start": {
+              "column": 12,
+              "line": 44
+            },
+            "end": {
+              "column": 13,
+              "line": 44
+            }
+          },
+          "mutatorName": "FlipNumSignMutator",
+          "replacement": "(- 1)",
+          "status": "Timeout",
+          "killedBy": []
+        },
+        {
+          "id": "8",
+          "location": {
+            "start": {
+              "column": 5,
+              "line": 45
+            },
+            "end": {
+              "column": 6,
+              "line": 45
+            }
+          },
+          "mutatorName": "FlipNumSignMutator",
+          "replacement": "(- 1)",
+          "status": "Timeout",
+          "killedBy": []
+        },
+        {
+          "id": "9",
+          "location": {
+            "start": {
+              "column": 7,
+              "line": 11
+            },
+            "end": {
+              "column": 62,
+              "line": 11
+            }
+          },
+          "mutatorName": "EmptyStringMutator",
+          "replacement": "\"\"",
+          "status": "Timeout",
+          "killedBy": []
+        },
+        {
+          "id": "10",
+          "location": {
+            "start": {
+              "column": 7,
+              "line": 28
+            },
+            "end": {
+              "column": 63,
+              "line": 28
+            }
+          },
+          "mutatorName": "EmptyStringMutator",
+          "replacement": "\"\"",
+          "status": "Timeout",
+          "killedBy": []
+        },
+        {
+          "id": "11",
+          "location": {
+            "start": {
+              "column": 7,
+              "line": 38
+            },
+            "end": {
+              "column": 73,
+              "line": 38
+            }
+          },
+          "mutatorName": "EmptyStringMutator",
+          "replacement": "\"\"",
+          "status": "Timeout",
+          "killedBy": []
+        },
+        {
+          "id": "12",
+          "location": {
+            "start": {
+              "column": 10,
+              "line": 16
+            },
+            "end": {
+              "column": 11,
+              "line": 16
+            }
+          },
+          "mutatorName": "NumLiteralsMutator",
+          "replacement": "0",
+          "status": "Timeout",
+          "killedBy": []
+        },
+        {
+          "id": "13",
+          "location": {
+            "start": {
+              "column": 10,
+              "line": 16
+            },
+            "end": {
+              "column": 11,
+              "line": 16
+            }
+          },
+          "mutatorName": "NumLiteralsMutator",
+          "replacement": "-1",
+          "status": "Timeout",
+          "killedBy": []
+        },
+        {
+          "id": "14",
+          "location": {
+            "start": {
+              "column": 10,
+              "line": 16
+            },
+            "end": {
+              "column": 11,
+              "line": 16
+            }
+          },
+          "mutatorName": "NumLiteralsMutator",
+          "replacement": "1",
+          "status": "Timeout",
+          "killedBy": []
+        },
+        {
+          "id": "15",
+          "location": {
+            "start": {
+              "column": 10,
+              "line": 16
+            },
+            "end": {
+              "column": 11,
+              "line": 16
+            }
+          },
+          "mutatorName": "NumLiteralsMutator",
+          "replacement": "0.0",
+          "status": "Timeout",
+          "killedBy": []
+        },
+        {
+          "id": "16",
+          "location": {
+            "start": {
+              "column": 10,
+              "line": 16
+            },
+            "end": {
+              "column": 11,
+              "line": 16
+            }
+          },
+          "mutatorName": "NumLiteralsMutator",
+          "replacement": "2.0",
+          "status": "Timeout",
+          "killedBy": []
+        },
+        {
+          "id": "17",
+          "location": {
+            "start": {
+              "column": 5,
+              "line": 17
+            },
+            "end": {
+              "column": 6,
+              "line": 17
+            }
+          },
+          "mutatorName": "NumLiteralsMutator",
+          "replacement": "0",
+          "status": "Timeout",
+          "killedBy": []
+        },
+        {
+          "id": "18",
+          "location": {
+            "start": {
+              "column": 5,
+              "line": 17
+            },
+            "end": {
+              "column": 6,
+              "line": 17
+            }
+          },
+          "mutatorName": "NumLiteralsMutator",
+          "replacement": "-1",
+          "status": "Timeout",
+          "killedBy": []
+        },
+        {
+          "id": "19",
+          "location": {
+            "start": {
+              "column": 5,
+              "line": 17
+            },
+            "end": {
+              "column": 6,
+              "line": 17
+            }
+          },
+          "mutatorName": "NumLiteralsMutator",
+          "replacement": "1",
+          "status": "Timeout",
+          "killedBy": []
+        },
+        {
+          "id": "20",
+          "location": {
+            "start": {
+              "column": 5,
+              "line": 17
+            },
+            "end": {
+              "column": 6,
+              "line": 17
+            }
+          },
+          "mutatorName": "NumLiteralsMutator",
+          "replacement": "0.0",
+          "status": "Timeout",
+          "killedBy": []
+        },
+        {
+          "id": "21",
+          "location": {
+            "start": {
+              "column": 5,
+              "line": 17
+            },
+            "end": {
+              "column": 6,
+              "line": 17
+            }
+          },
+          "mutatorName": "NumLiteralsMutator",
+          "replacement": "2.0",
+          "status": "Timeout",
+          "killedBy": []
+        },
+        {
+          "id": "22",
+          "location": {
+            "start": {
+              "column": 5,
+              "line": 23
+            },
+            "end": {
+              "column": 6,
+              "line": 23
+            }
+          },
+          "mutatorName": "NumLiteralsMutator",
+          "replacement": "0",
+          "status": "Timeout",
+          "killedBy": []
+        },
+        {
+          "id": "23",
+          "location": {
+            "start": {
+              "column": 5,
+              "line": 23
+            },
+            "end": {
+              "column": 6,
+              "line": 23
+            }
+          },
+          "mutatorName": "NumLiteralsMutator",
+          "replacement": "-1",
+          "status": "Timeout",
+          "killedBy": []
+        },
+        {
+          "id": "24",
+          "location": {
+            "start": {
+              "column": 5,
+              "line": 23
+            },
+            "end": {
+              "column": 6,
+              "line": 23
+            }
+          },
+          "mutatorName": "NumLiteralsMutator",
+          "replacement": "1",
+          "status": "Timeout",
+          "killedBy": []
+        },
+        {
+          "id": "25",
+          "location": {
+            "start": {
+              "column": 5,
+              "line": 23
+            },
+            "end": {
+              "column": 6,
+              "line": 23
+            }
+          },
+          "mutatorName": "NumLiteralsMutator",
+          "replacement": "0.0",
+          "status": "Timeout",
+          "killedBy": []
+        },
+        {
+          "id": "26",
+          "location": {
+            "start": {
+              "column": 5,
+              "line": 23
+            },
+            "end": {
+              "column": 6,
+              "line": 23
+            }
+          },
+          "mutatorName": "NumLiteralsMutator",
+          "replacement": "2.0",
+          "status": "Timeout",
+          "killedBy": []
+        },
+        {
+          "id": "27",
+          "location": {
+            "start": {
+              "column": 3,
+              "line": 24
+            },
+            "end": {
+              "column": 4,
+              "line": 24
+            }
+          },
+          "mutatorName": "NumLiteralsMutator",
+          "replacement": "0",
+          "status": "Timeout",
+          "killedBy": []
+        },
+        {
+          "id": "28",
+          "location": {
+            "start": {
+              "column": 3,
+              "line": 24
+            },
+            "end": {
+              "column": 4,
+              "line": 24
+            }
+          },
+          "mutatorName": "NumLiteralsMutator",
+          "replacement": "-1",
+          "status": "Timeout",
+          "killedBy": []
+        },
+        {
+          "id": "29",
+          "location": {
+            "start": {
+              "column": 3,
+              "line": 24
+            },
+            "end": {
+              "column": 4,
+              "line": 24
+            }
+          },
+          "mutatorName": "NumLiteralsMutator",
+          "replacement": "1",
+          "status": "Timeout",
+          "killedBy": []
+        },
+        {
+          "id": "30",
+          "location": {
+            "start": {
+              "column": 3,
+              "line": 24
+            },
+            "end": {
+              "column": 4,
+              "line": 24
+            }
+          },
+          "mutatorName": "NumLiteralsMutator",
+          "replacement": "0.0",
+          "status": "Timeout",
+          "killedBy": []
+        },
+        {
+          "id": "31",
+          "location": {
+            "start": {
+              "column": 3,
+              "line": 24
+            },
+            "end": {
+              "column": 4,
+              "line": 24
+            }
+          },
+          "mutatorName": "NumLiteralsMutator",
+          "replacement": "2.0",
+          "status": "Timeout",
+          "killedBy": []
+        },
+        {
+          "id": "32",
+          "location": {
+            "start": {
+              "column": 12,
+              "line": 31
+            },
+            "end": {
+              "column": 13,
+              "line": 31
+            }
+          },
+          "mutatorName": "NumLiteralsMutator",
+          "replacement": "0",
+          "status": "Timeout",
+          "killedBy": []
+        },
+        {
+          "id": "33",
+          "location": {
+            "start": {
+              "column": 12,
+              "line": 31
+            },
+            "end": {
+              "column": 13,
+              "line": 31
+            }
+          },
+          "mutatorName": "NumLiteralsMutator",
+          "replacement": "-1",
+          "status": "Timeout",
+          "killedBy": []
+        },
+        {
+          "id": "34",
+          "location": {
+            "start": {
+              "column": 12,
+              "line": 31
+            },
+            "end": {
+              "column": 13,
+              "line": 31
+            }
+          },
+          "mutatorName": "NumLiteralsMutator",
+          "replacement": "1",
+          "status": "Timeout",
+          "killedBy": []
+        },
+        {
+          "id": "35",
+          "location": {
+            "start": {
+              "column": 12,
+              "line": 31
+            },
+            "end": {
+              "column": 13,
+              "line": 31
+            }
+          },
+          "mutatorName": "NumLiteralsMutator",
+          "replacement": "0.0",
+          "status": "Timeout",
+          "killedBy": []
+        },
+        {
+          "id": "36",
+          "location": {
+            "start": {
+              "column": 12,
+              "line": 31
+            },
+            "end": {
+              "column": 13,
+              "line": 31
+            }
+          },
+          "mutatorName": "NumLiteralsMutator",
+          "replacement": "2.0",
+          "status": "Timeout",
+          "killedBy": []
+        },
+        {
+          "id": "37",
+          "location": {
+            "start": {
+              "column": 5,
+              "line": 34
+            },
+            "end": {
+              "column": 6,
+              "line": 34
+            }
+          },
+          "mutatorName": "NumLiteralsMutator",
+          "replacement": "0",
+          "status": "Timeout",
+          "killedBy": []
+        },
+        {
+          "id": "38",
+          "location": {
+            "start": {
+              "column": 5,
+              "line": 34
+            },
+            "end": {
+              "column": 6,
+              "line": 34
+            }
+          },
+          "mutatorName": "NumLiteralsMutator",
+          "replacement": "-1",
+          "status": "Timeout",
+          "killedBy": []
+        },
+        {
+          "id": "39",
+          "location": {
+            "start": {
+              "column": 5,
+              "line": 34
+            },
+            "end": {
+              "column": 6,
+              "line": 34
+            }
+          },
+          "mutatorName": "NumLiteralsMutator",
+          "replacement": "1",
+          "status": "Timeout",
+          "killedBy": []
+        },
+        {
+          "id": "40",
+          "location": {
+            "start": {
+              "column": 5,
+              "line": 34
+            },
+            "end": {
+              "column": 6,
+              "line": 34
+            }
+          },
+          "mutatorName": "NumLiteralsMutator",
+          "replacement": "0.0",
+          "status": "Timeout",
+          "killedBy": []
+        },
+        {
+          "id": "41",
+          "location": {
+            "start": {
+              "column": 5,
+              "line": 34
+            },
+            "end": {
+              "column": 6,
+              "line": 34
+            }
+          },
+          "mutatorName": "NumLiteralsMutator",
+          "replacement": "2.0",
+          "status": "Timeout",
+          "killedBy": []
+        },
+        {
+          "id": "42",
+          "location": {
+            "start": {
+              "column": 12,
+              "line": 44
+            },
+            "end": {
+              "column": 13,
+              "line": 44
+            }
+          },
+          "mutatorName": "NumLiteralsMutator",
+          "replacement": "0",
+          "status": "Timeout",
+          "killedBy": []
+        },
+        {
+          "id": "43",
+          "location": {
+            "start": {
+              "column": 12,
+              "line": 44
+            },
+            "end": {
+              "column": 13,
+              "line": 44
+            }
+          },
+          "mutatorName": "NumLiteralsMutator",
+          "replacement": "-1",
+          "status": "Timeout",
+          "killedBy": []
+        },
+        {
+          "id": "44",
+          "location": {
+            "start": {
+              "column": 12,
+              "line": 44
+            },
+            "end": {
+              "column": 13,
+              "line": 44
+            }
+          },
+          "mutatorName": "NumLiteralsMutator",
+          "replacement": "1",
+          "status": "Timeout",
+          "killedBy": []
+        },
+        {
+          "id": "45",
+          "location": {
+            "start": {
+              "column": 12,
+              "line": 44
+            },
+            "end": {
+              "column": 13,
+              "line": 44
+            }
+          },
+          "mutatorName": "NumLiteralsMutator",
+          "replacement": "0.0",
+          "status": "Timeout",
+          "killedBy": []
+        },
+        {
+          "id": "46",
+          "location": {
+            "start": {
+              "column": 12,
+              "line": 44
+            },
+            "end": {
+              "column": 13,
+              "line": 44
+            }
+          },
+          "mutatorName": "NumLiteralsMutator",
+          "replacement": "2.0",
+          "status": "Timeout",
+          "killedBy": []
+        },
+        {
+          "id": "47",
+          "location": {
+            "start": {
+              "column": 5,
+              "line": 45
+            },
+            "end": {
+              "column": 6,
+              "line": 45
+            }
+          },
+          "mutatorName": "NumLiteralsMutator",
+          "replacement": "0",
+          "status": "Timeout",
+          "killedBy": []
+        },
+        {
+          "id": "48",
+          "location": {
+            "start": {
+              "column": 5,
+              "line": 45
+            },
+            "end": {
+              "column": 6,
+              "line": 45
+            }
+          },
+          "mutatorName": "NumLiteralsMutator",
+          "replacement": "-1",
+          "status": "Timeout",
+          "killedBy": []
+        },
+        {
+          "id": "49",
+          "location": {
+            "start": {
+              "column": 5,
+              "line": 45
+            },
+            "end": {
+              "column": 6,
+              "line": 45
+            }
+          },
+          "mutatorName": "NumLiteralsMutator",
+          "replacement": "1",
+          "status": "Timeout",
+          "killedBy": []
+        },
+        {
+          "id": "50",
+          "location": {
+            "start": {
+              "column": 5,
+              "line": 45
+            },
+            "end": {
+              "column": 6,
+              "line": 45
+            }
+          },
+          "mutatorName": "NumLiteralsMutator",
+          "replacement": "0.0",
+          "status": "Timeout",
+          "killedBy": []
+        },
+        {
+          "id": "51",
+          "location": {
+            "start": {
+              "column": 5,
+              "line": 45
+            },
+            "end": {
+              "column": 6,
+              "line": 45
+            }
+          },
+          "mutatorName": "NumLiteralsMutator",
+          "replacement": "2.0",
+          "status": "Timeout",
+          "killedBy": []
+        }
+      ]
+    }
+  }
+}
