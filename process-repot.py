@@ -16,4 +16,4 @@ for file in os.listdir('report'):
 # combine all the data into one dataframe
 df = pd.concat(dfs, ignore_index=True)
 # save the data to a csv file
-df.to_csv('mutation_report3.csv', index=False)
+df.to_csv('mutation_report.csv', index=False)
